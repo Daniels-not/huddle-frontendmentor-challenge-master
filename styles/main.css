@@ -1,0 +1,187 @@
+/* Font Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Style Resets */
+
+:root{
+    --violet : hsl(257, 40%, 49%);
+    --magenta :  hsl(300, 69%, 71%);
+    --intro-top-margin : 1.25rem;
+}
+
+html{
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+*{
+    padding:0;
+    margin: 0;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+h1, h2,h3,h4,h5,h6{
+    font-family: 'Poppins', sans-serif;
+}
+
+img{
+    width: 100%;
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.white{
+    color:#fff;
+}
+
+/* General Styles */
+
+body{
+    background: url('/images/bg-mobile.svg')no-repeat center;
+    font-family: 'Open Sans', sans-serif;
+    padding: 3% 2%;
+    background-color:  var(--violet);
+    background-position:50% 0% ;
+    background-size: 100% 45%;
+}
+
+header > img{
+    width: clamp(25%, 10rem, 100%);
+}
+
+.huddle_intro{
+    padding: 3% 0 0 0;
+    text-align: center;
+}
+
+.huddle_intro .huddle_intro_heading{
+    padding-top: 5rem;
+    font-size:clamp(50%, 2.25rem, 5rem);
+}
+
+.huddle_intro .huddle_intro_description{
+    font-size : clamp(100%, .5rem, 3rem);
+    margin-top :  var(--intro-top-margin);
+    line-height : 1.7rem;
+}
+
+.huddle_intro button{
+    background-color: #fff;
+    color:var(--violet);
+    cursor: pointer;
+    border-radius: 30px;
+    border : 2px solid var(--violet);
+    margin-top :  var(--intro-top-margin);
+    width: 70%;
+    max-width: 12rem;
+    padding: .75rem 3.5rem;
+    font-size: 1.1rem;
+}
+
+.huddle_intro button:hover,
+.huddle_intro button:focus {
+    background-color: var(--magenta);
+    color: #fff;
+}
+
+/* Mask Out The Social Links */
+[aria-label="Facebook"] {
+    mask-image: url('/images/logo-facebook.svg');
+    -webkit-mask-image:  url('/images/logo-facebook.svg');
+}
+
+[aria-label="Twitter"] {
+    mask-image: url('/images/logo-twitter.svg');
+    -webkit-mask-image:  url('/images/logo-twitter.svg');
+}
+
+[aria-label="Instagram"] {
+    mask-image: url('/images/logo-instagram.svg');
+    -webkit-mask-image:  url('/images/logo-instagram.svg');
+}
+
+.huddle_social_links{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.huddle_social_links >  li {
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+    padding: .5rem;
+}
+
+.huddle_social_links li:hover,
+.huddle_social_links li:focus {
+    border: 2px solid var(--magenta);
+}
+
+.huddle_social_links  li + li {
+    margin: .5rem;
+}
+
+.huddle_social_links .social-icon{
+    --icon-width: 28px;
+
+    display: block;
+    width: var(--icon-width);
+    height: var(--icon-width);
+    background: white;
+    mask-size: cover;
+}
+
+.social-icon:hover,
+.social-icon:focus {
+    background-color: var(--magenta);
+}
+
+footer{
+    margin-top: 2rem;
+}
+
+footer .attribution {
+    font-size: 15px;
+    color:#fff;
+    text-align: center;
+}
+
+footer .attribution a {
+        color: hsl(300, 69%, 71%);
+}
+
+/* For Larger Screens */
+@media screen and (min-width:768px){
+    body{
+        background: url('/images/bg-desktop.svg')no-repeat center;
+        background-color: var(--violet);
+        background-position:50% 0% ;
+        background-size: cover;
+    }
+    .huddle_intro{
+        display: flex;
+        text-align: left;
+    }
+    .huddle_intro > div{
+        margin-left: 2.5rem;
+    }
+    .huddle_social_links{
+        display: flex;
+        justify-content: flex-end;
+    }
+}
